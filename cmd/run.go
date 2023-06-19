@@ -105,6 +105,8 @@ func (o *runOption) preRunE(cmd *cobra.Command, args []string) (err error) {
 		o.reportWriter = runner.NewMarkdownResultWriter(writer)
 	case "html":
 		o.reportWriter = runner.NewHTMLResultWriter(writer)
+	case "json":
+		o.reportWriter = runner.NewJSONResultWriter(writer)
 	case "discard":
 		o.reportWriter = runner.NewDiscardResultWriter()
 	case "", "std":
